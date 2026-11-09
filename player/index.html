@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>You Decide Channel - Interactive Player</title>
+<style>
+body{font-family:system-ui;background:#111;color:#eee;margin:0;padding:20px}
+.container{max-width:900px;margin:auto}
+#video-area{background:#222;border-radius:16px;min-height:400px;display:flex;align-items:center;justify-content:center;margin:20px 0}
+button{padding:12px 24px;margin:8px;border:none;border-radius:12px;background:#4ecdc4;color:#000;font-weight:bold;cursor:pointer}
+button:hover{background:#3db8b0}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>You Decide Channel</h1>
+<p>시청자 선택으로 캐릭터 감정과 상황 전개가 바뀌는 양방향 영상</p>
+<div id="video-area">3D 캐릭터 / 영상 영역 (구현 예정)</div>
+<div id="choices">
+  <button onclick="choose('happy')">기쁘 선택</button>
+  <button onclick="choose('regret')">후회 선택</button>
+  <button onclick="choose('encourage')">격려 선택</button>
+</div>
+<div id="status">선택을 기다립니다...</div>
+</div>
+<script>
+function choose(emotion) {
+  document.getElementById('status').textContent = '선택: ' + emotion + ' → 해당 GLB 클립 재생 예정';
+  // TODO: Three.js GLTFLoader + AnimationMixer로 연결
+}
+</script>
+</body>
+</html>
